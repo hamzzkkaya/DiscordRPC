@@ -1,0 +1,69 @@
+﻿<Window x:Class="DiscordRPC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiscordRPC"
+        mc:Ignorable="d"
+        Title="NeronTechGames TLP Launcher" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" Background="Transparent" Height="277" Width="305" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Border CornerRadius="5" BorderThickness="2.5" BorderBrush="#212529" MouseDown="Border_MouseDown">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1.5" StartPoint="0,0.5">
+                    <GradientStop Color="#6693bf"/>
+                    <GradientStop Color="#272B2F" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Button x:Name="Exit" Margin="0,10,10,0" Style="{DynamicResource buttons}" BorderThickness="2"  Click="Exit_Click" HorizontalAlignment="Right" Width="80" Height="40" VerticalAlignment="Top">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1.5" StartPoint="0,0.5">
+                            <GradientStop Color="#421b1b"/>
+                            <GradientStop Color="#914040" Offset="1.8"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Path Stroke="#FFFFFFFF" StrokeThickness="1" Data="{StaticResource exit}" Height="14" Stretch="Fill" Width="14" />
+                </Button>
+                <Button x:Name="Minimize" Margin="0,10,95,0" Style="{DynamicResource buttons}" BorderThickness="2" Click="Minimize_Click" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FF1C421B"/>
+                            <GradientStop Color="#FF429140" Offset="1.8"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Path Stroke="#FFFFFFFF" StrokeThickness="1" Data="{StaticResource minimize}" Height="14" Stretch="Fill" Width="14" />
+                </Button>
+                <Button x:Name="NeronTechGames" Margin="0,10,210,0" Style="{DynamicResource buttons}" BorderThickness="2" Click="NeronTechGames_Click" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1.5" StartPoint="0,0.5">
+                            <GradientStop Color="#FF3E421B"/>
+                            <GradientStop Color="#FF899140" Offset="1.8"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Path Stroke="#FFFFFFFF" StrokeThickness="0.5" Data="{StaticResource ball}" Height="14" Stretch="Fill" Width="14" />
+                </Button>
+                <Label  Content="Client Id:" Foreground="White" FontFamily="Bahnschrift" Margin="10,58,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="65"/>
+                <TextBox x:Name="clientid" Text="1300184987869515837" Margin="0,56,10,0" Style="{DynamicResource TextBox}" Background="#212529" Foreground="White" FontFamily="Bahnschrift" HorizontalAlignment="Right" Width="210" Height="30" VerticalAlignment="Top"></TextBox>
+                <Label  Content="Resim Adı:" Foreground="White" FontFamily="Bahnschrift" Margin="10,93,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
+                <TextBox x:Name="ImageKey" Text="kedycig" Margin="0,91,10,0" Style="{DynamicResource TextBox}" Background="#212529" Foreground="White" FontFamily="Bahnschrift" HorizontalAlignment="Right" Width="210" Height="30" VerticalAlignment="Top"></TextBox>
+                <Label  Content="2. Resim:" Foreground="White" FontFamily="Bahnschrift" Margin="12,130,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
+                <TextBox x:Name="SmallImage" Text="kedycig" Margin="0,126,10,0" Style="{DynamicResource TextBox}" Background="#212529" Foreground="White" FontFamily="Bahnschrift" HorizontalAlignment="Right" Width="210" Height="30" VerticalAlignment="Top"></TextBox>
+                <Label  Content="Üst Başlık:" Foreground="White" FontFamily="Bahnschrift" Margin="10,163,0,0" HorizontalAlignment="Left" Width="70" Height="26" VerticalAlignment="Top"></Label>
+                <TextBox x:Name="UstBaslik" Text="CaGan" Margin="0,161,10,0" Style="{DynamicResource TextBox}" Background="#212529" Foreground="White" FontFamily="Bahnschrift" HorizontalAlignment="Right" Width="210" Height="30" VerticalAlignment="Top"></TextBox>
+                <Label Content="Alt Başlık:" Foreground="White" FontFamily="Bahnschrift" Margin="10,199,0,0" HorizontalAlignment="Left" Width="65" Height="26" VerticalAlignment="Top"></Label>
+                <TextBox x:Name="AltBaslik" Text="KedY" Margin="0,197,10,0" Style="{DynamicResource TextBox}" Background="#212529" Foreground="White" FontFamily="Bahnschrift" HorizontalAlignment="Right" Width="210" Height="30" VerticalAlignment="Top"></TextBox>
+                <Button x:Name="Apply" Margin="0,232,10,0" Style="{DynamicResource buttons}" BorderThickness="2" Click="Apply_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="210" FontFamily="Bahnschrift" Content="Uygula">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1.5" StartPoint="0,0.5">
+                            <GradientStop Color="#272B2F"/>
+                            <GradientStop Color="#6693bf" Offset="1.8"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <CheckBox x:Name="timer" Margin="10,236,0,0" Content="Timer" Foreground="White" FontFamily="Bahnschrift" Style="{DynamicResource CheckBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="65"></CheckBox>
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

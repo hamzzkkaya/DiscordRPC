@@ -1,0 +1,186 @@
+﻿<Application x:Class="DiscordRPC.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DiscordRPC"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Geometry x:Key="minimize">M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5</Geometry>
+        <Geometry x:Key="exit">M5.636 5.636a9 9 0 1012.728 0M12 3v9</Geometry>
+        <Geometry x:Key="ball">M12 3.05051C11.3647 2.40223 10.4793 2 9.5 2C7.567 2 6 3.567 6 5.5C6 6.47934 6.40223 7.36474 7.05051 8H6.5C4.567 8 3 9.567 3 11.5C3 12.8962 3.81753 14.1015 5 14.6632V17C5 19.7614 7.23858 22 10 22H14C16.7614 22 19 19.7614 19 17V14.6632C20.1825 14.1015 21 12.8962 21 11.5C21 9.567 19.433 8 17.5 8H16.9495C17.5978 7.36474 18 6.47934 18 5.5C18 3.567 16.433 2 14.5 2C13.5207 2 12.6353 2.40223 12 3.05051ZM9.5 4C8.67157 4 8 4.67157 8 5.5C8 6.32843 8.67157 7 9.5 7C10.3284 7 11 6.32843 11 5.5C11 4.67157 10.3284 4 9.5 4ZM13 5.5C13 6.32843 13.6716 7 14.5 7C15.3284 7 16 6.32843 16 5.5C16 4.67157 15.3284 4 14.5 4C13.6716 4 13 4.67157 13 5.5ZM11 10H6.5C5.67157 10 5 10.6716 5 11.5C5 12.3284 5.67157 13 6.5 13H11V10ZM13 10H17.5C18.3284 10 19 10.6716 19 11.5C19 12.3284 18.3284 13 17.5 13H13V10ZM11 15H7V17C7 18.6569 8.34315 20 10 20H11V15ZM13 20V15H17V17C17 18.6569 15.6569 20 14 20H13Z</Geometry>
+                
+        <SolidColorBrush Color="#787878" x:Key="Button.Pressed.Background" />
+
+        <Style TargetType="{x:Type Button}" x:Key="buttons">
+            <Setter Property="Background" Value="#FF202020" />
+            <Setter  Property="Foreground"  Value="#FFFFFFFF" />
+            <Setter Property="BorderBrush" Value="#129ac9" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate   TargetType="{x:Type Button}">
+                        <Border BorderBrush="#212529" CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="UIElement.IsMouseOver" Value="True">
+                    <TriggerBase.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    To="#272B2F"
+                                    Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)"
+                                    FillBehavior="HoldEnd"
+                                    Duration="0:0:0.25"
+                                    AutoReverse="False"
+                                    RepeatBehavior="1x" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </TriggerBase.EnterActions>
+                    <TriggerBase.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)"
+                                    FillBehavior="HoldEnd"
+                                    Duration="0:0:0.25"
+                                    AutoReverse="False"
+                                    RepeatBehavior="1x" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </TriggerBase.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style
+    TargetType="{x:Type TextBox}"
+    x:Key="TextBox">
+            <Setter
+        Property="UIElement.SnapsToDevicePixels"
+        Value="True" />
+            <Setter
+        Property="FrameworkElement.OverridesDefaultStyle"
+        Value="True" />
+            <Setter
+        Property="FrameworkElement.FocusVisualStyle"
+        Value="{x:Null}" />
+            <Setter
+        Property="UIElement.AllowDrop"
+        Value="False" />
+            <Setter
+        Property="Template">
+                <Setter.Value>
+                    <ControlTemplate
+                TargetType="{x:Type TextBoxBase}">
+                        <Border
+                    Name="Border"
+                    CornerRadius="5"
+                    Background="{TemplateBinding Background}">
+                            <ScrollViewer
+                        Name="PART_ContentHost"
+                        Margin="8" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger
+                        Property="IsEnabled"
+                        Value="False">
+                                <Setter
+                            TargetName="Border"
+                            Property="Background"
+                            Value="#EEEEEE" />
+                                <Setter
+                            TargetName="Border"
+                            Property="BorderBrush"
+                            Value="#EEEEEE" />
+                                <Setter
+                            Property="Foreground"
+                            Value="#888888" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style
+TargetType="{x:Type CheckBox}"
+x:Key="CheckBox">
+            <Setter
+                Property="Template">
+                <Setter.Value>
+                    <ControlTemplate
+                        TargetType="{x:Type CheckBox}">
+                        <BulletDecorator>
+                            <BulletDecorator.Bullet>
+                                <StackPanel
+                                    Orientation="Horizontal">
+                                    <Border
+                                        Name="Border"
+                                        Width="21"
+                                        Height="21"
+                                        Background="#212529"
+                                        CornerRadius="5">
+                                        <Path
+                                            Name="CheckMark"
+                                            Width="7"
+                                            Height="7"
+                                            SnapsToDevicePixels="False"
+                                            Stroke="#FFFFFFFF"
+                                            StrokeThickness="2"
+                                            Data="M0,0 L7,7 M0,7 L7,0" />
+                                    </Border>
+                                    <TextBlock
+                                        Text="{TemplateBinding Content}"
+                                        Foreground="#FFFFFFFF"
+                                        Margin="6 2 0 0" />
+                                </StackPanel>
+                            </BulletDecorator.Bullet>
+                        </BulletDecorator>
+                        <ControlTemplate.Triggers>
+                            <Trigger
+                                Property="ToggleButton.IsChecked"
+                                Value="false">
+                                <Setter
+                                    TargetName="CheckMark"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                            </Trigger>
+                            <Trigger
+                                Property="ToggleButton.IsChecked"
+                                Value="{x:Null}">
+                                <Setter
+                                    TargetName="CheckMark"
+                                    Property="Data"
+                                    Value="M0,7 L7,0" />
+                            </Trigger>
+                            <Trigger
+                                Property="UIElement.IsMouseOver"
+                                Value="True">
+                                <Setter
+                                    TargetName="Border"
+                                    Property="Background"
+                                    Value="#272B2F" />
+                            </Trigger>
+                            <Trigger
+                                Property="IsPressed"
+                                Value="True">
+                                <Setter
+                                    TargetName="Border"
+                                    Property="Background"
+                                    Value="{StaticResource Button.Pressed.Background}" />
+                            </Trigger>
+                            <Trigger
+                                Property="IsEnabled"
+                                Value="False">
+                                <Setter
+                                    TargetName="Border"
+                                    Property="Background"
+                                    Value="#FFA9A9A9" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>
