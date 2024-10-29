@@ -1,5 +1,7 @@
 # Özelleştirilebilir Discord Rich Presence!
 Bu proje, Discord'un Rich Presence özelliğini kendi ihtiyaçlarınıza göre özelleştirmenizi sağlar. 🎨 Profilinizi kişiselleştirin, arkadaşlarınıza hangi oyunu oynadığınızı ya da hangi projede çalıştığınızı gösterin! 🎮
+![image](https://github.com/user-attachments/assets/ac0bdf42-b3b6-48c2-b6dd-31c89c849351)
+
 
 ## Kullanım
 [Discord Developer Tools](https://discord.com/developers/applications) sitesine giriş yapınız. "New Application" tuşuna tıklayıp isimlendirirek yeni bir proje oluşturunuz. Projenin "Application ID" kısmını kopyalayıp programda ilgili alana yapıştırınız.
