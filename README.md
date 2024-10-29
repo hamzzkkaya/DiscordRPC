@@ -1,6 +1,10 @@
 # Özelleştirilebilir Discord Rich Presence!
 Bu proje, Discord'un Rich Presence özelliğini kendi ihtiyaçlarınıza göre özelleştirmenizi sağlar. 🎨 Profilinizi kişiselleştirin, arkadaşlarınıza hangi oyunu oynadığınızı ya da hangi projede çalıştığınızı gösterin! 🎮
 ![image](https://github.com/user-attachments/assets/ac0bdf42-b3b6-48c2-b6dd-31c89c849351)
+![image](https://github.com/user-attachments/assets/031e549d-8aa9-419d-bbe2-3b27c1a1e5de)
+![image](https://github.com/user-attachments/assets/b76f631a-53a7-4870-9ca0-2d383014ff47)
+
+
 
 
 ## Kullanım
