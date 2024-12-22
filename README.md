@@ -13,7 +13,7 @@ Bu proje, Discord'un Rich Presence özelliğini kendi ihtiyaçlarınıza göre �
 - Projenin "Application ID" kısmını kopyalayıp programda ilgili alana yapıştırınız.
 - Kategorilerden "Rich Presence" sayfasına giriş yaparak gerekli resimleri aktarınız.
   ![image](https://github.com/user-attachments/assets/5d4570e5-daa5-4d86-8336-851a078e37b7)
-- Aktarılan isimlere koyduğunuz isimleri programda ilgili alanlara yazınız.
+- Aktarılan resimlere koyduğunuz isimleri programda ilgili alanlara yazınız.
 - Program içerisinde "Üst Başlık" ve "Alt Başlık" kısımlarını isteğe bağlı düzenleyiniz.
 - Dilerseniz Timer açabilir ve ya kapatabilirsiniz.
 - Uygula ile programı çalıştırabilirsiniz.
